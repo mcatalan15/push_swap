@@ -6,7 +6,7 @@
 #    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 19:10:12 by mcatalan@st       #+#    #+#              #
-#    Updated: 2023/07/27 19:00:10 by mcatalan@st      ###   ########.fr        #
+#    Updated: 2023/08/22 11:16:37 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,8 @@ SRCS = 	ft_isalpha.c		\
 		ft_lstclear.c 		\
 		ft_lstiter.c 		\
 		ft_lstmap.c 		\
+		ft_atol.c			\
+
 
 SRCSB = ft_lstnew.c 		\
 		ft_lstadd_front.c	\
