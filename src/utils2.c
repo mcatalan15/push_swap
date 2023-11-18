@@ -6,11 +6,11 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:26:19 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/08/22 10:48:42 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/11/18 11:39:41 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 t_stack	*ft_find_last(t_stack *a)
 {

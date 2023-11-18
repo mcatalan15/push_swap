@@ -6,7 +6,7 @@
 #    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 19:10:12 by mcatalan@st       #+#    #+#              #
-#    Updated: 2023/08/21 19:17:01 by mcatalan@st      ###   ########.fr        #
+#    Updated: 2023/11/18 11:40:41 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,30 +18,25 @@ FT_PRINTF = libftprintf.a
 
 NSERVER = push_swap
 
-SRCS =	src/push_swap.c					\
-		src/push_start.c				\
-		src/push_moves.c				\
-		src/utils/utils.c				\
-		src/utils/utils2.c				\
-		src/sort/sort.c					\
-		src/operations/push.c			\
+SRCS =	src/push_swap.c						\
+		src/push_start.c					\
+		src/push_moves.c					\
+		src/utils.c							\
+		src/utils2.c						\
+		src/sort.c							\
+		src/operations/push.c				\
 		src/operations/reverse_rotation.c	\
-		src/operations/rotate.c			\
-		src/operations/swap.c			\
+		src/operations/rotate.c				\
+		src/operations/swap.c				\
 		
 
 OBJS = $(SRCS:.c=.o)
 
 DEPS = $(SRCS:.c=.d)
 
-
-#OBJSBONUS = $(SRCSB:.c=.o)
-
 INCLUDE = -I./
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-
-#DEPS_BONUS = $(SRCSB:.c=.d)
 
 all: makelibft $(NSERVER)
 

@@ -6,11 +6,11 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:46:58 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/08/21 19:16:00 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/11/18 11:39:46 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 bool	cheack_sort(t_stack *stack)
 {
