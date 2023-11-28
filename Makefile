@@ -6,7 +6,7 @@
 #    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 19:10:12 by mcatalan@st       #+#    #+#              #
-#    Updated: 2023/11/18 11:40:41 by mcatalan@st      ###   ########.fr        #
+#    Updated: 2023/11/18 11:52:13 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ makeftprintf:
 	${CC} ${CFLAGS} -MMD $(INCLUDE) -c $< -o $@
 
 $(NSERVER): $(OBJS) $(LIBFT_D)$(LIBFT) $(FT_PRINTF_D)$(FT_PRINTF)
-	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBFT_D)$(LIBFT) $(FT_PRINTF_D)$(FT_PRINTF)
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBFT_D)$(LIBFT) $(FT_PRINTF_D)$(FT_PRINTF) -g
 -include $(DEPS)
 
 clean:

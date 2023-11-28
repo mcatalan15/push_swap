@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 10:55:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/11/18 11:39:36 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/11/28 12:57:34 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_syntax(char *s)
 {
+	// printf("ENTRA Syntax\n");
 	if (!(*s == '+' || *s == '-' || (*s >= '0' && *s <= '9')))
 		return (1);
 	if ((*s == '+' || *s == '-') && !(s[1] >= '0' && s[1] <= '9'))
@@ -74,6 +75,28 @@ int	ft_repetition(t_stack *a, int n)
 	return (0);
 }
 
+int ft_syntax2(char *s)
+{
+	printf("ENTRA Syntax 2\n");
+	printf("%s\n", s);
+	// if (!(*s == '+' || *s == '-' || (*s >= '0' && *s <= '9')))
+	// 	return (1);
+	// if ((*s == '+' || *s == '-') && !(s[1] >= '0' && s[1] <= '9'))
+	// 	return (1);
+	// while (*++s)
+	// {
+	// 	if (!(*s >= '0' && *s <= '9'))
+	// 		return (1);
+	// }
+	return (0);
+}
+
+int msg_err(char *str)
+{
+	ft_printf("%s", str);
+	exit(1);
+}
+
 void	create_stack(t_stack **a, char **argv, bool flag_argc_2)
 {
 	long	n;
@@ -92,11 +115,14 @@ void	create_stack(t_stack **a, char **argv, bool flag_argc_2)
 		ft_node_search(a, (int)n);
 		i++;
 	}
-	if (flag_argc_2)
+	if (flag_argc_2 > 0)
 	{
+		printf("es un argumento\n");
 		i = -1;
-		if (NULL == argv || NULL == *argv)
+		if (argv == NULL || *argv == NULL)
 			return ;
+		ft_syntax2(argv[1]);
+			// msg_err("Error");
 		while (argv[i])
 			free(argv[i++]);
 		free(argv - 1);
