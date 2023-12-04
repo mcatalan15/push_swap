@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:29:07 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/11/29 12:39:55 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/04 11:30:55 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
+		msg_err("Error\n");
 	else if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	// is_one_arg(argv, argc == 2);
+	{
+		if (ft_syntax_2(argv[1]) == 1)
+			msg_err("Error\n");
+		else
+			argv = ft_split(argv[1], ' ');
+	}
 	create_stack(&a, argv + 1, argc == 2);
 	if (!cheack_sort(a))
 	{

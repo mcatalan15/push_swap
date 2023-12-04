@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:29:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/08/21 19:22:11 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/04 11:32:13 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,8 @@ void	pb(t_stack **b, t_stack **a, bool checker);
 void	rra(t_stack **a, bool checker);
 void	rrb(t_stack **b, bool checker);
 void	rrr(t_stack **a, t_stack **b, bool checker);
+
+int msg_err(char *str);
+int ft_syntax_2(char *s);
 
 #endif
