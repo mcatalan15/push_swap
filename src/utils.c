@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 10:55:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/04 11:39:16 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/04 11:49:24 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	ft_syntax(char *s)
 
 	i = 0;
 
-	while (s[i] && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\v' || s[i] == '\f'))
+	while (s[i] && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n'
+			|| s[i] == '\r' || s[i] == '\v' || s[i] == '\f'))
 		i++;
 	if (!(s[i] == '+' || s[i] == '-' || (s[i] >= '0' && s[i] <= '9')))
 		return (1);
@@ -78,27 +79,6 @@ int	ft_repetition(t_stack *a, int n)
 		a = a->next;
 	}
 	return (0);
-}
-
-int	ft_syntax_2(char *s)
-{
-	
-	if (!(*s == '+' || *s == '-' || (*s >= '0' && *s <= '9')))
-		return (1);
-	if ((*s == '+' || *s == '-') && !(s[1] >= '0' && s[1] <= '9'))
-		return (1);
-	while (*++s)
-	{
-		if (!(*s >= '0' && *s <= '9'))
-			return (1);
-	}
-	return (0);
-}
-
-int	msg_err(char *s)
-{
-	ft_putstr_fd(s, 2);
-	exit(1);
 }
 
 void	create_stack(t_stack **a, char **argv, bool flag_argc_2)

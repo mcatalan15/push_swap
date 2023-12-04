@@ -6,7 +6,7 @@
 #    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 19:10:12 by mcatalan@st       #+#    #+#              #
-#    Updated: 2023/11/18 11:52:13 by mcatalan@st      ###   ########.fr        #
+#    Updated: 2023/12/04 12:02:07 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS =	src/push_swap.c						\
 		src/push_moves.c					\
 		src/utils.c							\
 		src/utils2.c						\
+		src/utils3.c						\
 		src/sort.c							\
 		src/operations/push.c				\
 		src/operations/reverse_rotation.c	\

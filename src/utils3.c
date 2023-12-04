@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 11:11:35 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/04 12:10:10 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/12/04 11:49:34 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/12/04 12:20:16 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-long	ft_atol(const char *str)
+int	ft_syntax_2(char *s)
 {
 	long	num;
-	int		isneg;
-	int		i;
+	if (!(*s == '+' || *s == '-' || (*s >= '0' && *s <= '9')))
+		return (1);
+	if ((*s == '+' || *s == '-') && !(s[1] >= '0' && s[1] <= '9'))
+		return (1);
+	while (*++s)
+	{
+		if (!(*s >= '0' && *s <= '9'))
+			return (1);
+	}
+	num = ft_atol(s);
+	if (num > INT_MAX || num < INT_MIN)
+		return (1);
+	return (0);
+}
 
-	num = 0;
-	isneg = 1;
-	i = 0;
-	while (str[i] && (str[i] == ' ' || str[i] == '\t'
-			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v'
-			|| str[i] == '\f'))
-		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
-	{
-		isneg *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * isneg);
+int	msg_err(char *s)
+{
+	ft_putstr_fd(s, 2);
+	exit(1);
 }
