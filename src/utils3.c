@@ -6,26 +6,48 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:49:34 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/04 12:20:16 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/05 11:19:51 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+int	len_num(char *str)
+{
+	int	i;
+	int	flag;
+	int	count;
+
+	flag = 0;
+	i = -1;
+	count = 0;
+	while (str[++i])
+	{
+		if (str[i] > '0' && str[i] <= '9')
+			flag = 1;
+		if (str[i] >= '0' && str[i] <= '9' && flag == 1)
+			count++;
+	}
+	return (count);
+}
+
 int	ft_syntax_2(char *s)
 {
-	long	num;
-	if (!(*s == '+' || *s == '-' || (*s >= '0' && *s <= '9')))
+	int				i;
+	long long int	num;
+
+	i = 0;
+	if (!(s[i] == '+' || s[i] == '-' || (s[i] >= '0' && s[i] <= '9')))
 		return (1);
-	if ((*s == '+' || *s == '-') && !(s[1] >= '0' && s[1] <= '9'))
+	if ((s[i] == '+' || s[i] == '-') && !(s[1] >= '0' && s[1] <= '9'))
 		return (1);
-	while (*++s)
+	while (s[++i])
 	{
-		if (!(*s >= '0' && *s <= '9'))
+		if (!(s[i] >= '0' && s[i] <= '9'))
 			return (1);
 	}
 	num = ft_atol(s);
-	if (num > INT_MAX || num < INT_MIN)
+	if (num > INT_MAX || num < INT_MIN || len_num(s) > 10)
 		return (1);
 	return (0);
 }

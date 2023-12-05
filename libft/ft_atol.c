@@ -6,17 +6,17 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:11:35 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/04 12:10:10 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/05 10:50:01 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atol(const char *str)
+long long int	ft_atol(const char *str)
 {
-	long	num;
-	int		isneg;
-	int		i;
+	long long int	num;
+	int				isneg;
+	int				i;
 
 	num = 0;
 	isneg = 1;

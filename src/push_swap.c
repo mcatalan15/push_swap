@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:29:07 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/04 11:30:55 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/05 11:11:15 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+
+	// char *num_str = "002147483647";
+	// printf("%lld\n", ft_atol(num_str));
 
 	a = NULL;
 	b = NULL;
