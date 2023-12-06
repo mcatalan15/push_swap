@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 10:55:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/04 11:49:24 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/06 11:19:25 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	create_stack(t_stack **a, char **argv, bool flag_argc_2)
 	long	n;
 	int		i;
 
+	// printf("Entra\n");
 	i = 0;
 	while (argv[i])
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:49:34 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/05 11:19:51 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/06 11:37:28 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,21 @@ int	ft_syntax_2(char *s)
 	int				i;
 	long long int	num;
 
+	// printf("Entra2\n");
 	i = 0;
+	while (s[i] == ' ' || s[i] == '\t')
+		i++;
 	if (!(s[i] == '+' || s[i] == '-' || (s[i] >= '0' && s[i] <= '9')))
 		return (1);
 	if ((s[i] == '+' || s[i] == '-') && !(s[1] >= '0' && s[1] <= '9'))
 		return (1);
+	// printf("Sigue\n");
 	while (s[++i])
 	{
 		if (!(s[i] >= '0' && s[i] <= '9'))
 			return (1);
 	}
+
 	num = ft_atol(s);
 	if (num > INT_MAX || num < INT_MIN || len_num(s) > 10)
 		return (1);
