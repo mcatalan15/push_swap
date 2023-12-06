@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:29:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/04 12:01:51 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/06 13:18:07 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,5 @@ void	pb(t_stack **b, t_stack **a, bool checker);
 void	rra(t_stack **a, bool checker);
 void	rrb(t_stack **b, bool checker);
 void	rrr(t_stack **a, t_stack **b, bool checker);
-
 
 #endif

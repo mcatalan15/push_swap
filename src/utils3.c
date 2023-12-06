@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:49:34 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/06 12:39:14 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/06 13:21:10 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	ft_syntax_2(char *s)
 		if (!(s[i] >= '0' && s[i] <= '9'))
 			return (1);
 	}
-
 	num = ft_atol(s);
 	if (num > INT_MAX || num < INT_MIN || len_num(s) > 10)
 		return (1);

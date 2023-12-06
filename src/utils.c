@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 10:55:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/06 12:58:17 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/06 13:21:24 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ int	ft_syntax(char *s)
 	int	i;
 
 	i = 0;
-
 	while (s[i] && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n'
-		|| s[i] == '\r' || s[i] == '\v' || s[i] == '\f'))
+			|| s[i] == '\r' || s[i] == '\v' || s[i] == '\f'))
 		i++;
 	if (!(s[i] == '+' || s[i] == '-' || (s[i] >= '0' && s[i] <= '9')))
 		return (1);
