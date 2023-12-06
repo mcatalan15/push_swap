@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:29:07 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/06 11:39:02 by mcatalan         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:57:07 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,21 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	char **my_argv;
 
+	my_argv = &argv[1];
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	if (argc == 1 || (argc == 2 && !my_argv[0][0]))
 		msg_err("Error\n");
 	else if (argc == 2)
 	{
-		if (ft_syntax_2(argv[1]) == 1)
+		if (ft_syntax_2(my_argv[0]) == 1)
 			msg_err("Error\n");
 		else
-			argv = ft_split(argv[1], ' ');
+			my_argv = ft_split(my_argv[0], ' ');
 	}
-	create_stack(&a, argv + 1, argc == 2);
+	create_stack(&a, my_argv, argc == 2);
 	if (!cheack_sort(a))
 	{
 		if (stack_len(a) == 2)

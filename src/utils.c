@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 10:55:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/06 11:19:25 by mcatalan         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:58:17 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_syntax(char *s)
 	i = 0;
 
 	while (s[i] && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n'
-			|| s[i] == '\r' || s[i] == '\v' || s[i] == '\f'))
+		|| s[i] == '\r' || s[i] == '\v' || s[i] == '\f'))
 		i++;
 	if (!(s[i] == '+' || s[i] == '-' || (s[i] >= '0' && s[i] <= '9')))
 		return (1);
@@ -86,11 +86,10 @@ void	create_stack(t_stack **a, char **argv, bool flag_argc_2)
 	long	n;
 	int		i;
 
-	// printf("Entra\n");
 	i = 0;
 	while (argv[i])
 	{
-		if (ft_syntax(argv[i]))
+		if (ft_syntax_2(argv[i]))
 			ft_free(a, argv, flag_argc_2);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
@@ -102,11 +101,11 @@ void	create_stack(t_stack **a, char **argv, bool flag_argc_2)
 	}
 	if (flag_argc_2 > 0)
 	{
-		i = -1;
-		if (argv == NULL || *argv == NULL)
+		if (argv == NULL)
 			return ;
+		i = 0;
 		while (argv[i])
 			free(argv[i++]);
-		free(argv - 1);
+		free(argv);
 	}
 }
