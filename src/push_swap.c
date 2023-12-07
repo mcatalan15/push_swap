@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:29:07 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/07 11:19:02 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/07 12:31:54 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,4 @@ int	main(int argc, char **argv)
 	}
 	create_stack(&a, my_argv, argc == 2);
 	main_2(a, b);
-	// if (!cheack_sort(a))
-	// {
-	// 	if (stack_len(a) == 2)
-	// 		sa(&a, false);
-	// 	else if (stack_len(a) == 3)
-	// 		ft_short_sort(&a);
-	// 	else
-	// 		push_swap(&a, &b);
-	// }
-	// ft_free_stack(&a);
 }
