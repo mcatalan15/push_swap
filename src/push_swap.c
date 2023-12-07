@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:29:07 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/06 13:19:55 by mcatalan         ###   ########.fr       */
+/*   Updated: 2023/12/07 11:19:02 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	main_2(t_stack *a, t_stack *b)
+{
+	if (!cheack_sort(a))
+	{
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			ft_short_sort(&a);
+		else
+			push_swap(&a, &b);
+	}
+	ft_free_stack(&a);
+}
 
 int	main(int argc, char **argv)
 {
@@ -31,14 +45,15 @@ int	main(int argc, char **argv)
 			my_argv = ft_split(my_argv[0], ' ');
 	}
 	create_stack(&a, my_argv, argc == 2);
-	if (!cheack_sort(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			ft_short_sort(&a);
-		else
-			push_swap(&a, &b);
-	}
-	ft_free_stack(&a);
+	main_2(a, b);
+	// if (!cheack_sort(a))
+	// {
+	// 	if (stack_len(a) == 2)
+	// 		sa(&a, false);
+	// 	else if (stack_len(a) == 3)
+	// 		ft_short_sort(&a);
+	// 	else
+	// 		push_swap(&a, &b);
+	// }
+	// ft_free_stack(&a);
 }
