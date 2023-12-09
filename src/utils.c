@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 10:55:03 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/07 11:14:26 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/09 18:24:41 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ int	ft_syntax(char *s)
 	return (0);
 }
 
+/*
+Frees the mem of the given stack
+*/
+
 void	ft_free_stack(t_stack **a)
 {
 	t_stack	*tmp;
@@ -48,6 +52,11 @@ void	ft_free_stack(t_stack **a)
 	}
 	*a = NULL;
 }
+
+/*
+Free mem of the stack with ft_free_stack and command line arguments.
+Also exits with error msg.
+*/
 
 void	ft_free(t_stack **a, char **argv, bool flag_argc_2)
 {
@@ -67,6 +76,10 @@ void	ft_free(t_stack **a, char **argv, bool flag_argc_2)
 	exit(1);
 }
 
+/*
+Check if an int value exist in the stack.
+*/
+
 int	ft_repetition(t_stack *a, int n)
 {
 	if (NULL == a)
@@ -79,6 +92,17 @@ int	ft_repetition(t_stack *a, int n)
 	}
 	return (0);
 }
+
+/*
+	1-Initialize the stack_a
+	2-Check the syntax for every paramenter given. and frees the mem in case
+		the syntax is incorrect.
+	3-Convert the str to ft_atol and check its not bigger than an int
+	4-Checks if there're repetitions with ft_repetitions and frees mem in chase
+		there're
+	5-Add the num into the stack as a node with ft_node_search.
+	6-If bool flag_argc means argc==2 and cleans the mem.
+*/
 
 void	create_stack(t_stack **a, char **argv, bool flag_argc_2)
 {

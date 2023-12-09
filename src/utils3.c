@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:49:34 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/06 13:21:10 by mcatalan         ###   ########.fr       */
+/*   Updated: 2023/12/09 18:12:05 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+With a given string, counts the num of charaters the string has
+*/
 
 int	len_num(char *str)
 {
@@ -30,6 +34,14 @@ int	len_num(char *str)
 	}
 	return (count);
 }
+
+/*
+This function check if the given string pass the syntax filter for the push_swap in the argc==2 case
+	1-Delete spaces and checks there's no other char thats not a num
+	2- Use ft_atol to convert the num in string format to long long int and check if the num given
+		is bigger than INT_MAX or INT_MIN. Also if the num of digits is bigger than 10 with len_num
+		function
+*/
 
 int	ft_syntax_2(char *s)
 {
@@ -53,6 +65,10 @@ int	ft_syntax_2(char *s)
 		return (1);
 	return (0);
 }
+
+/*
+Function used to ouput a str given on the standar error output with exit 1;
+*/
 
 int	msg_err(char *s)
 {

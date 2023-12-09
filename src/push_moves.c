@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:50:01 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/08/22 10:50:23 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/09 18:50:27 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,21 @@ static void	ft_moves(t_stack **a, t_stack **b)
 	finish_rotation(a, cheapest_n->target, 'a');
 	pa(a, b, false);
 }
+
+/*
+Implements the main algorithm for sorting the stack 'a' using the push_swap approach.
+	1-Check the lenght of stack A
+	2-If lenght 5 calls ft_five.
+	3-Otherwise continues with the default case.
+	4-Moves elements from stack 'A' to stack 'B' until there're 3 elements
+		left in stack 'A'
+	5-Calls ft_short_sort to sort the remaining elements of stack 'A'.
+	6-Pushes elements back from stack 'B to stack 'A'
+	7-Calls ft_moves to perform additional moves and optimizations
+	8-Calls ft_positions to adjust the positions of elements in stack 'A'.
+	9-Search the smallest element and determines its positions.
+	10-Rotates stack 'A' to position the smallest element correctly.
+*/
 
 void	push_swap(t_stack **a, t_stack **b)
 {

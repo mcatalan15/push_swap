@@ -6,11 +6,15 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:26:58 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/08/21 19:23:10 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/09 18:36:27 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+/*
+Performs the "reverse rotate" operation on the given stack
+*/
 
 static void	ft_reverse_rotation(t_stack **a)
 {
@@ -28,6 +32,10 @@ static void	ft_reverse_rotation(t_stack **a)
 	last->next->prev = last;
 }
 
+/*
+Performs the "reverse rotate a" operation on the given stack.
+*/
+
 void	rra(t_stack **a, bool checker)
 {
 	ft_reverse_rotation(a);
@@ -35,13 +43,18 @@ void	rra(t_stack **a, bool checker)
 		ft_printf("rra\n");
 }
 
+/*
+Performs the "reverse rotate b" operation on the given stack
+*/
 void	rrb(t_stack **b, bool checker)
 {
 	ft_reverse_rotation(b);
 	if (!checker)
 		ft_printf("rrb\n");
 }
-
+/*
+Performs the "reverse rotate a" & "reverse rotate b" operation on the given stack
+*/
 void	rrr(t_stack **a, t_stack **b, bool checker)
 {
 	ft_reverse_rotation(a);

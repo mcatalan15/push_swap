@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:26:19 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/11/18 11:39:41 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/09 18:26:20 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ void	ft_node_search(t_stack **a, int n)
 		node->prev = last_node;
 	}
 }
+
+/*
+Calculates and returns the length of a linked stack
+*/
 
 int	stack_len(t_stack *a)
 {
