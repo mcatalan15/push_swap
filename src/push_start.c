@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 12:41:41 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/09 18:56:47 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/10 16:44:43 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@ void	ft_position(t_stack *a)
 	}
 }
 
+/*
+Determines the target position for each element in stack 'B' based on thereir values.
+	1-Check if in stack 'A' is a greater value thant stack 'B' And if it's the closest.
+	2-If not the element in stack 'B' is bigger than all stack 'A'.
+*/
+
 static void	ft_target(t_stack *a, t_stack *b)
 {
 	t_stack		*c_a;
@@ -68,6 +74,10 @@ static void	ft_target(t_stack *a, t_stack *b)
 	}
 }
 
+/*
+Calculates the price for each element in stack 'B'.
+*/
+
 void	ft_price(t_stack *a, t_stack *b)
 {
 	int	a_len;
@@ -87,6 +97,10 @@ void	ft_price(t_stack *a, t_stack *b)
 		b = b->next;
 	}
 }
+
+/*
+Identifies and marks the elements with the lowest "price" in stack 'B'
+*/
 
 void	ft_cheapest(t_stack *b)
 {

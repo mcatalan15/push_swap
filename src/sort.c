@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 11:46:58 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/09 18:52:12 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/10 16:49:57 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,10 @@ void	ft_five(t_stack **a, t_stack **b)
 		pb(b, a, false);
 	}
 }
+
+/*
+Returns the pointer to the cheapest element
+*/
 
 t_stack	*ft_cheapest_return(t_stack *a)
 {

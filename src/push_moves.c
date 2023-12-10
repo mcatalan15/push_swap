@@ -6,11 +6,15 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:50:01 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/12/09 18:50:27 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/12/10 16:53:10 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+/*
+Reverse both stacks until cheapest elements are on the position
+*/
 
 static void	r_both(t_stack **a, t_stack **b, t_stack *cheapest_n)
 {
@@ -20,6 +24,10 @@ static void	r_both(t_stack **a, t_stack **b, t_stack *cheapest_n)
 	ft_position(*b);
 }
 
+/*
+Reverse rotate both stacks until cheapest elements are on the position
+*/
+
 static void	reverse_r_both(t_stack **a, t_stack **b, t_stack *cheapest_n)
 {
 	while (*a != cheapest_n->target && *b != cheapest_n)
@@ -27,6 +35,10 @@ static void	reverse_r_both(t_stack **a, t_stack **b, t_stack *cheapest_n)
 	ft_position(*a);
 	ft_position(*b);
 }
+
+/*
+Rotates  or reverse stack 'A' until the top element of the stack is at the specified target position
+*/
 
 void	finish_rotation(t_stack **a, t_stack *top_n, char sname)
 {
@@ -48,6 +60,14 @@ void	finish_rotation(t_stack **a, t_stack *top_n, char sname)
 		}
 	}
 }
+
+/*
+Performs a moves based on the cheapest element in stack 'B'
+	1-Check if the cheapest is above the median and rotate both stacks
+	2-Uf the cheapest and the target is below the median reverse rotate both stacks
+	3-Finish rotation to perform additional rotations for the cheapest element and targets.
+	4-Push cheapest element from stack 'B' to 'A'
+*/
 
 static void	ft_moves(t_stack **a, t_stack **b)
 {
